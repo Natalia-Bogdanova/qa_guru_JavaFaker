@@ -28,6 +28,8 @@ public class RegistrationFormPage {
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
         Selenide.zoom(0.6);
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
        return this;
     }
 
