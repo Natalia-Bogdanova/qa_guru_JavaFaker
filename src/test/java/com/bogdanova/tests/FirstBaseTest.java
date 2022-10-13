@@ -1,50 +1,24 @@
 package com.bogdanova.tests;
 
-        import com.codeborne.selenide.Condition;
-        import com.codeborne.selenide.Configuration;
-        import com.codeborne.selenide.Selenide;
-        import org.junit.jupiter.api.BeforeAll;
-        import org.junit.jupiter.api.BeforeEach;
-        import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
-        import javax.xml.namespace.QName;
+import static com.bogdanova.tests.TestData.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
-        import static com.bogdanova.tests.TestData.*;
-        import static com.codeborne.selenide.Condition.text;
-        import static com.codeborne.selenide.Selectors.byText;
-        import static com.codeborne.selenide.Selenide.*;
+public class FirstBaseTest extends TestBase{
 
-public class FirstTest {
-
-//    String firstName = "Vadim";
-//    String lastName = "Pirogkov";
-//    String email = "Pirogkov@gmail.com";
-//    String phone = "9051112233";
-//    String day = "16";
-//    String month = "June";
-//    String year = "1951";
-
-//    String firstName;
-//    String lastName;
-//    String email;
-//    String phone;
-//    String day;
-//    String month;
-//    String year;
-//        @BeforeEach
-//        void prepareTestData(){
-//            String firstName = "Vadim";
-//    lastName = "Pirogkov";
-//    email = "Pirogkov@gmail.com";
-//    phone = "9051112233";
-//    day = "16";
-//    month = "June";
-//    year = "1951";
-//        }
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
         Selenide.zoom(0.9);
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$'#fixedban').remove()");
+
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
