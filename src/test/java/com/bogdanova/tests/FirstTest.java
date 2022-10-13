@@ -4,6 +4,7 @@ package com.bogdanova.tests;
         import com.codeborne.selenide.Configuration;
         import com.codeborne.selenide.Selenide;
         import org.junit.jupiter.api.BeforeAll;
+        import org.junit.jupiter.api.BeforeEach;
         import org.junit.jupiter.api.Test;
 
         import javax.xml.namespace.QName;
@@ -14,13 +15,32 @@ package com.bogdanova.tests;
 
 public class FirstTest {
 
-    String firstName = "Vadim";
-    String lastName = "Pirogkov";
-    String email = "Pirogkov@gmail.com";
-    String phone = "9051112233";
-    String day = "16";
-    String month = "June";
-    String year = "1951";
+//    String firstName = "Vadim";
+//    String lastName = "Pirogkov";
+//    String email = "Pirogkov@gmail.com";
+//    String phone = "9051112233";
+//    String day = "16";
+//    String month = "June";
+//    String year = "1951";
+
+//    String firstName;
+//    String lastName;
+//    String email;
+//    String phone;
+//    String day;
+//    String month;
+//    String year;
+//        @BeforeEach
+//        void prepareTestData(){
+//            String firstName = "Vadim";
+//    lastName = "Pirogkov";
+//    email = "Pirogkov@gmail.com";
+//    phone = "9051112233";
+//    day = "16";
+//    month = "June";
+//    year = "1951";
+//        }
+
 
     @BeforeAll
     static void configure(){
