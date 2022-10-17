@@ -1,21 +1,39 @@
 package com.bogdanova.tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.appear;
+import static com.bogdanova.utils.RandomUtils.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class FirstBaseTest extends TestBase{
+public class TestRandomUtils {
+
+    String firstName = getRandomString(10);
+    String lastName = getRandomString(10);
+    String email = getRandomEmail();
+    String currentAddress = getRandomAlphabetic(20);
+    String phone = getRandomPhone();
+    String day = "16";
+    String month = "June";
+    String year = "1951";
+
+    @BeforeAll
+    static void configure(){
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+    }
 
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        $("practice-form-wrapper").shouldHave(text("Student Registration Form"));
         Selenide.zoom(0.9);
         executeJavaScript("$('footer').remove()");
-        executeJavaScript("$'#fixedban').remove()");
+        executeJavaScript("$('#fixedban').remove()");
 
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
@@ -29,7 +47,7 @@ public class FirstBaseTest extends TestBase{
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#hobbies-checkbox-2").parent().click();
         $("#uploadPicture").uploadFromClasspath("3.jpg");
-        $("#currentAddress").setValue("red light, Geeta Colony");
+        $("#currentAddress").setValue(currentAddress);
         $(byText("Select State")).click();
         $(byText("Haryana")).click();
         $(byText("Select City")).click();

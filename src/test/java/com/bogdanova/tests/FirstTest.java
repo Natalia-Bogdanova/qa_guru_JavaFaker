@@ -16,13 +16,13 @@ package com.bogdanova.tests;
 
 public class FirstTest {
 
-//    String firstName = "Vadim";
-//    String lastName = "Pirogkov";
-//    String email = "Pirogkov@gmail.com";
-//    String phone = "9051112233";
-//    String day = "16";
-//    String month = "June";
-//    String year = "1951";
+    String firstName = "Vadim";
+    String lastName = "Pirogkov";
+    String email = "Pirogkov@gmail.com";
+    String phone = "9051112233";
+    String day = "16";
+    String month = "June";
+    String year = "1951";
 
 //    String firstName;
 //    String lastName;
