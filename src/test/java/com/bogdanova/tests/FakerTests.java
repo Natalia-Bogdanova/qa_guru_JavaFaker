@@ -6,22 +6,24 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Locale;
+
 import static com.bogdanova.utils.RandomUtils.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class FakerTests {
-    Faker faker = new Faker();
-    String firstName = faker.name().firstName(); // Emory
-    String lastName = faker.name().lastName(); // Barton
-    String email = "";
-    String currentAddress = faker.address().streetAddress();
-    String phone = "";
+//    Faker faker = new Faker();
+    Faker faker = new Faker(new Locale("ru"));
+    String firstName = faker.name().firstName();
+    String lastName = faker.name().lastName();
+    String email = faker.internet().emailAddress();
+    String currentAddress = faker.address().fullAddress();
+    String phone = faker.phoneNumber().subscriberNumber(10);
     String day = "16";
     String month = "June";
     String year = "1951";
-
     @BeforeAll
     static void configure(){
         Configuration.baseUrl = "https://demoqa.com";

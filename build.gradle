@@ -12,9 +12,9 @@ repositories {
 dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation(
-            'codeborne:selenide:6.7.4',
+            'com.codeborne:selenide:6.9.0',
             'org.junit.jupiter:junit-jupiter:5.9.0',
-            'org.slf4j:slf4j-simple:2.0.0',
+            'org.slf4j:slf4j-simple:2.0.3',
             'com.github.javafaker:javafaker:1.0.2',
             'org.assertj:assertj-core:3.23.1',
             'com.fasterxml.jackson.core:jackson-core:2.13.4',
